@@ -13,7 +13,13 @@ root.resizable(width=False, height=False)
 text = tk.Label(root, text="Prison-Escape",  font='Helvetica 26 bold')
 text.place(relx = 0.5, rely = 0.4, anchor = 'center')
 
-#Geht zum ersten Raum
+#Startfenster Hintergrund
+#canvas = tk.Canvas(root, width=800, height=800, bg="black")
+#canvas.pack()
+#prisonImg = tk.PhotoImage(file="")
+#prisonBg = canvas.create_image(0,0,image=prisonImg, anchor='nw')
+
+#Button -> Geht zum ersten Raum
 def start_cell():
     root.destroy()
     Zelle.run()

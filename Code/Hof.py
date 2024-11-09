@@ -1,5 +1,3 @@
-from itertools import filterfalse
-
 #if übergang == True:
 import time
 
@@ -22,6 +20,7 @@ def gefängnishof_1():
     while True:
         print("Du siehst dir nochmals die Umgebung an.")
         kommando = input("Zu welcher Station möchtest du gehen? (Treppe/Kiste/Tisch/Wachturm): ").lower()
+        time.sleep(3)
 
         if kommando == "treppe":  # Erster Teil zum entkommen
             if not schlüssel_gefunden:
@@ -78,30 +77,38 @@ def gefängnishof_1():
             else:
                 print("Der Wachturm ist bereits betreten worden.")
                 time.sleep(2)
-
         else:
             print("Unbekannter Befehl. Versuche eines der vier Befehle: Treppe, Kiste, Bank, Wachturm.")
             time.sleep(2)
-
-
-# Aufruf der Funktion
+#Aufruf der Funktion
 gefängnishof_1()
+
 print("Herzlichen Glückwunsch, du bist in der nächsten Stufe")
-print("Hinweis aus der ersten Stufe", code.get("CODE_Teil1"),",", code.get("CODE_Teil2"))
+
 def gefängnishof_2_Wachturm():
     print("Du hast nun den Wachturm erreicht und bist nun vor der letzten Stufe unseres Spiels")
     time.sleep(2)
-    print("Du gehst den Wachturm hinauf und überprüfst, ob irgendeine Tür im Treppenhaus  offen ist.\n "
+    print("Du gehst den Wachturm hinauf und überprüfst, ob irgendeine Tür im Treppenhaus  offen ist.\n"
           "Es sind bis oben aber alle Türen verschlossen und dir ist nur eine Abstellkammer des Hausmeisters in der dritten Etage aufgefallen, welcher mit einem digitalen Zahlenschloss versperrt ist.\n"
-          "Ganz oben im Wachturm ist dir noch ein Fenster aufgefallen, welches nicht versperrt ist und aus dem Gefängnis führt"
+          "Ganz oben im Wachturm ist dir noch ein Fenster aufgefallen, welches nicht versperrt ist und aus dem Gefängnis führt")
     time.sleep(2)
     print("Du hast alle versperrten Türen versucht mit dem gefundenen Schlüssel aufzuschließen, also ist deine letzte Hoffnung die Abstellkammper ")
+    time.sleep(2)
+    print("Dein Informant, der die Hinweise sorgfältig versteckt hat, erklärte, dass das Passwort sich aus dem einen Hinweis minus dem anderen Hinweis zusammensetzt. Er war sich aber unsicher wie herum")
+    print("Hinweis aus der ersten Stufe", code.get("CODE_Teil1"),",", code.get("CODE_Teil2"))
 
+    anzahl_versuche = 3
+    while anzahl_versuche > 0:
+        passwort = input("Bitte geben Sie das Passwort ein:")
+        anzahl_versuche -= 1
 
-anzahl_versuche = 3
-while anzahl_versuche > 0
-    passwort ==
-
-
-
-
+        if passwort == "5328":
+            print("Die Tür lässt sich öffnen")
+            break
+        else:
+            print("Passwort falsch")
+            print("Sie haben noch", anzahl_versuche, "versuche")
+            if anzahl_versuche == 0:
+                print("Das Nummernfeld geht aus und Sie kommen nicht weiter")
+#Aufruf der zweiten Funktion
+gefängnishof_2_Wachturm()

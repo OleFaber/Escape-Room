@@ -76,13 +76,13 @@ def tuer_waerterbuero():
     print("Die Tür zum Wächterbüro öffnet sich und du gehst hinein!")
 tuer_waerterbuero()
 
-def waechterbuero():
-    print("Im Wächterbüro angekommen, schaust du dich um und entdeckst die Steuerung der\n"
+def waerterbuero():
+    print("Im Wärterbüro angekommen, schaust du dich um und entdeckst die Steuerung der\n"
     "Überwachungskameras. Diese musst du für deine Flucht unbedingt deaktivieren!\n"
     "Du gehst zum Terminal und siehst, dass du einen USB-Stick zum Entriegeln brauchst.\n"
     "Du schaust dich um und siehst in dem Raum einen Schrank, einen Schreibtisch und einen Stuhl.")
+
     kommando = input("Was möchtest du dir als erstes Ansehen? Schrank / Schreibtisch / Stuhl")
 
     if kommando == "Stuhl":
-        print("Der Stuhl quietscht als du dich drauf setzt und du merkst einen Gegenstand\n"
-              "in der Rückenlehne.Du nimmst dir eine Schere und schneidest die Rückenlehne auf")
+        print("Der Stuhl quietscht als du dich drauf setzt.\n")
