@@ -1,42 +1,41 @@
 #Erster Raum - Gefängniszelle
+def run():
+    import tkinter as tk
 
-import tkinter as tk
-from tkinter import messagebox
+    # Hauptfenster erstellen
+    cell = tk.Tk()
+    cell.title("Zelle")
+    cell.geometry("800x800")
+    cell.resizable(width=False, height=False)
 
-output = ""
+    # Funktion zur Überprüfung des Lösungsworts
+    def check_password():
+        if user_input == "CODE":
+            output = tk.StringVar(cell,"Glückwunsch! Die Tür öffnet sich.")
+        else:
+            output = tk.StringVar(cell,"")
 
-# Funktion zur Überprüfung des Lösungsworts
-def check_password():
-    if user_input == "CODE":
-        return "Glückwunsch! Die Tür öffnet sich."
-    else:
-        return "Falsches Passwort!"
+        # Ausgabefeld Schloss
+        label_output = tk.Label(cell, text=output)
+        label_output.pack(pady=10)
 
-# Hauptfenster erstellen
-root = tk.Tk()
-root.title("Zelle")
-root.geometry("400x400")
-root.resizable(width=False, height=False)
+    # Begrüßungstext
 
-# Begrüßungstext
-label_text = tk.Label(root, text="Du erwachst in einer kalten, düsteren Gefängniszelle.\n" 
-                                  "Die Luft ist feucht, und nur ein schwacher Lichtstrahl fällt durch ein kleines Fenster hoch oben an der Wand.\n"
-                                  "An der Wand erkennst du eine Nachricht, die jemand eingeritzt hat:\n"
-                                  "\n\"Der Weg in die Freiheit ist nahe, wenn du die Zeichen erkennst. COuragiert und aufmerksam, "
-                                  "Damit du den SchlüssEl findest!\"\n", wraplength=400, justify="center")
-label_text.pack(pady=10)
+    label_text = tk.Label(cell, text="Du erwachst in einer kalten, düsteren Gefängniszelle.\n" 
+                                      "Die Luft ist feucht, und nur ein schwacher Lichtstrahl fällt durch ein kleines Fenster hoch oben an der Wand.\n"
+                                      "An der Wand erkennst du eine Nachricht, die jemand eingeritzt hat:\n"
+                                      "\n\"Der Weg in die Freiheit ist nahe, wenn du die Zeichen erkennst. COuragiert und aufmerksam, "
+                                      "Damit du den SchlüssEl findest!\"\n", wraplength=400, justify="center")
+    label_text.pack(pady=10)
 
-# Eingabefeld für das Lösungswort
-user_input = tk.Entry(root)
-user_input.pack(pady=10)
+    # Eingabefeld für das Lösungswort
+    user_input = tk.Entry(cell)
+    user_input.pack(pady=10)
+    print(user_input)
 
-# Prüfen-Schaltfläche
-button_check = tk.Button(root, text="Enter", command=check_password)
-button_check.pack(pady=10)
+    # Prüfen-Schaltfläche
+    button_check = tk.Button(cell, text="Enter", command=check_password)
+    button_check.pack(pady=10)
 
-#Ausgabefeld Schloss
-label_output = tk.Label(root, text=output)
-label_output.pack(pady=10)
-
-# GUI starten
-root.mainloop()
+    # GUI starten
+    cell.mainloop()
