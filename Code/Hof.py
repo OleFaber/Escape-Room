@@ -83,6 +83,7 @@ def gefängnishof_1():
 #Aufruf der Funktion
 gefängnishof_1()
 
+
 print("Herzlichen Glückwunsch, du bist in der nächsten Stufe")
 
 def gefängnishof_2_Wachturm():
