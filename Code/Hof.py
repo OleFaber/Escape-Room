@@ -159,15 +159,16 @@ def gefaengnishof_2_wachturm():
                     print("Villeicht bringt dich der Code, den du gerade notiert hast, weiter", code.get("CODE_Teil3"))
                     while True:
                         try:
-                            zahlencode_truhe = int(input("Bitte gib den code ein"))
+                            zahlencode_truhe = int(input("Bitte gib den Code ein"))
                             if zahlencode_truhe == 1234:
+                                print("richtiger Code!")
+                                time.sleep(2)
                                 break
                             else:
                                 print("Falscher Code!")
 
-
                         except ValueError as e:
-                            print("Sie dürfen keinen String eingeben")
+                            print("Sie dürfen keinen String eingeben", e)
                     print("In der Truhe liegt ein Seil")
                     seil_gefunden = True
 
