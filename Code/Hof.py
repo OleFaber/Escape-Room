@@ -110,6 +110,25 @@ def gefaengnishof_2_wachturm():
             print("Sie haben noch", anzahl_versuche, "versuche")
             if anzahl_versuche == 0:
                 print("Das Nummernfeld geht aus und Sie kommen nicht weiter") # hier wieder nach ganz vorne?!
+                # oder hier wieder an den anfang dieser Funktion
+    print("In der Abstellkammer findest du einen weiteren Schlüssel")
+    time.sleep(2)
+    print("Du testet ein weiteres mal mit diesem Schlüssel die Türen und es lässt sich eine Tür öffnen")
+    time.sleep(2)
+    print("Der Raum ist dunkel und du siehst hinten in der Ecke nur einen Umriss von einem Schreibtisch. \n"
+          "In der andern Ecke steht eine Truhe und rechts von dir steht eine kleiner Werkzeugkoffer")
+    time.sleep(2)
+    print("Die Truhe ist wieder mit einem Zahlenschloss versperrt")
+    seil_gefunden = False
+    kommando = input("Was möchtest du dir als erstes ansehen? Schreibtisch / Truhe / Werkzeugkoffer").lower()
+    while seil_gefunden == False:
+        if kommando == schreibtisch:
+            print("Auf dem Schreibtisch liegt nur ein Stift und ein Block")
+            time.sleep(2)
+            print("In der Schreibtischschublade ist ein kleines Notizbuch, indem auf der ersten Seite ein weiterer Code notiert ist")
+            time.sleep(2)
+            print("Der Code ist 1234")
+
 
 #Aufruf der zweiten Funktion
 gefaengnishof_2_wachturm()
