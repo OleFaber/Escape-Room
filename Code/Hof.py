@@ -1,43 +1,43 @@
-#if übergang == True:
+#if uebergang == True:
 import time
 
 code = {}
 
-def gefängnishof_1():
-    print("Du hast in der nächsten Stufe den Gefängnishof erreicht und musst einen Weg finden, in den Wachturm zu gelangen.")
+def gefaengnishof_1():
+    print("Du hast in der naechsten Stufe den Gefaengnishof erreicht und musst einen Weg finden, in den Wachturm zu gelangen.")
     time.sleep(5)
-    print("Als du über den Hof gehst, siehst du mehrere einzelne Stationen.")
+    print("Als du ueber den Hof gehst, siehst du mehrere einzelne Stationen.")
     time.sleep(5)
     print("Du kommst auf dem Weg zum Wachturm an einer Treppe, einem Tisch und einer Kiste vorbei.")
     time.sleep(5)
-    print("Der Wachturm ist verschlossen und man benötigt einen Schlüssel, um hineinzukommen.")
+    print("Der Wachturm ist verschlossen und man benoetigt einen Schluessel, um hineinzukommen.")
 
-    schlüssel_gefunden = False
+    schluessel_gefunden = False
     teilcode_gefunden = False
     teilcode2_gefunden = False
-    tür_wachturm = False
+    tuer_wachturm = False
 
     while True:
         print("Du siehst dir nochmals die Umgebung an.")
-        kommando = input("Zu welcher Station möchtest du gehen? (Treppe/Kiste/Tisch/Wachturm): ").lower()
+        kommando = input("Zu welcher Station moechtest du gehen? (Treppe/Kiste/Tisch/Wachturm): ").lower()
         time.sleep(3)
 
         if kommando == "treppe":  # Erster Teil zum entkommen
-            if not schlüssel_gefunden:
-                print("Glückwunsch! Unter der Treppe liegt ein Schlüssel,den ein Wachmann dort verloren haben musss.")
+            if not schluessel_gefunden:
+                print("Glueckwunsch! Unter der Treppe liegt ein Schluessel,den ein Wachmann dort verloren haben musss.")
                 time.sleep(2)
-                print("Du hebst den Schlüsssel auf")
-                schlüssel_gefunden = True
+                print("Du hebst den Schluesssel auf")
+                schluessel_gefunden = True
                 time.sleep(3)
             else:
                 print("Die Treppe wurde bereits untersucht.")
                 time.sleep(2)
 
-        elif kommando == "kiste":  # Zweiter Teil (Hinweis 1)
+        elif kommando == "kiste":  # Zweiter Teil (Hinweis 1)TREPPE
             if not teilcode_gefunden:
                 print("In der Kiste ist ein Hinweis mit einem Code: 2357.")
                 benutzer_code = input("Bitte notiere den Code, damit du ihn nicht vergisst: ")
-                if benutzer_code == "2357":  # Überprüfen, ob der eingegebene Code richtig ist
+                if benutzer_code == "2357":  # ueberpruefen, ob der eingegebene Code richtig ist
                     code["CODE_Teil1"] = benutzer_code
                     teilcode_gefunden = True
                     time.sleep(2)
@@ -50,9 +50,9 @@ def gefängnishof_1():
 
         elif kommando == "tisch":  # Dritter Teil (Hinweis 2)
             if not teilcode2_gefunden:
-                print("Unter dem Tisch ist ein Hinweis mit einem Code: 7685 den ein Informant für dich dort hinterlassen hat")
+                print("Unter dem Tisch ist ein Hinweis mit einem Code: 7685 den ein Informant fuer dich dort hinterlassen hat")
                 benutzer_code = input("Bitte notiere den Code,damit du ihn nicht vergisst: ")
-                if benutzer_code == "7685":  # Überprüfen, ob der eingegebene Code richtig ist
+                if benutzer_code == "7685":  # ueberpruefen, ob der eingegebene Code richtig ist
                     code["CODE_Teil2"] = benutzer_code
                     teilcode2_gefunden = True
                     time.sleep(2)
@@ -64,11 +64,11 @@ def gefängnishof_1():
                 time.sleep(2)
 
         elif kommando == "wachturm":  # Letzter Teil zum entkommen
-            if not tür_wachturm:
-                if schlüssel_gefunden and teilcode_gefunden and teilcode2_gefunden:
+            if not tuer_wachturm:
+                if schluessel_gefunden and teilcode_gefunden and teilcode2_gefunden:
                     print(
-                        "Du hast alle Hinweise in den Stationen sowie den Schlüssel gefunden und kommst somit in die nächste Stufe.")
-                    tür_wachturm = True
+                        "Du hast alle Hinweise in den Stationen sowie den Schluessel gefunden und kommst somit in die naechste Stufe.")
+                    #tuer_wachturm = True
                     time.sleep(3)
                     break
                 else:
@@ -81,20 +81,20 @@ def gefängnishof_1():
             print("Unbekannter Befehl. Versuche eines der vier Befehle: Treppe, Kiste, Bank, Wachturm.")
             time.sleep(2)
 #Aufruf der Funktion
-gefängnishof_1()
+#gefaengnishof_1()
 
-print("Herzlichen Glückwunsch, du bist in der nächsten Stufe")
+print("Herzlichen Glueckwunsch, du bist in der naechsten Stufe")
 
-def gefängnishof_2_Wachturm():
+def gefaengnishof_2_wachturm():
     print("Du hast nun den Wachturm erreicht und bist nun vor der letzten Stufe unseres Spiels")
     time.sleep(2)
-    print("Du gehst den Wachturm hinauf und überprüfst, ob irgendeine Tür im Treppenhaus  offen ist.\n"
-          "Es sind bis oben aber alle Türen verschlossen und dir ist nur eine Abstellkammer des Hausmeisters in der dritten Etage aufgefallen, welcher mit einem digitalen Zahlenschloss versperrt ist.\n"
-          "Ganz oben im Wachturm ist dir noch ein Fenster aufgefallen, welches nicht versperrt ist und aus dem Gefängnis führt")
+    print("Du gehst den Wachturm hinauf und ueberpruefst, ob irgendeine Tuer im Treppenhaus  offen ist.\n"
+          "Es sind bis oben aber alle Tueren verschlossen und dir ist nur eine Abstellkammer des Hausmeisters in der dritten Etage aufgefallen, welcher mit einem digitalen Zahlenschloss versperrt ist.\n"
+          "Ganz oben im Wachturm ist dir noch ein Fenster aufgefallen, welches nicht versperrt ist und aus dem Gefaengnis fuehrt")
     time.sleep(2)
-    print("Du hast alle versperrten Türen versucht mit dem gefundenen Schlüssel aufzuschließen, also ist deine letzte Hoffnung die Abstellkammper ")
+    print("Du hast ohne Erfolg alle versperrten Tueren versucht mit dem gefundenen Schluessel aufzuschließen, also ist deine letzte Hoffnung die Abstellkammper ")
     time.sleep(2)
-    print("Dein Informant, der die Hinweise sorgfältig versteckt hat, erklärte, dass das Passwort sich aus dem einen Hinweis minus dem anderen Hinweis zusammensetzt. Er war sich aber unsicher wie herum")
+    print("Dein Informant, der die Hinweise sorgfaeltig versteckt hat, erklaerte, dass sich das Passwort aus dem einen Hinweis minus dem anderen Hinweis zusammensetzt. Er war sich aber unsicher wie herum")
     print("Hinweis aus der ersten Stufe", code.get("CODE_Teil1"),",", code.get("CODE_Teil2"))
 
     anzahl_versuche = 3
@@ -103,12 +103,13 @@ def gefängnishof_2_Wachturm():
         anzahl_versuche -= 1
 
         if passwort == "5328":
-            print("Die Tür lässt sich öffnen")
+            print("Die Tuer laesst sich oeffnen")
             break
         else:
             print("Passwort falsch")
             print("Sie haben noch", anzahl_versuche, "versuche")
             if anzahl_versuche == 0:
-                print("Das Nummernfeld geht aus und Sie kommen nicht weiter")
+                print("Das Nummernfeld geht aus und Sie kommen nicht weiter") # hier wieder nach ganz vorne?!
+
 #Aufruf der zweiten Funktion
-gefängnishof_2_Wachturm()
+gefaengnishof_2_wachturm()
