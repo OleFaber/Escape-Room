@@ -25,7 +25,7 @@ def tuer_waerterbuero():
           "Du kannst dich leider nur noch an wenig erinnern.\n"
           "Die erste Stelle des Codes war die Quersumme der ersten Zellennummer.")
 
-    i=2
+    i=5
     while i>=0:
         pin_1 = int(input("1.Zahl:"))
         if pin_1 == 7:
@@ -43,7 +43,7 @@ def tuer_waerterbuero():
     zahl_2 = int(zellennummern.get("zelle_3"))
     ergebniss_2 = zahl_1 % zahl_2
 
-    i = 2
+    i = 5
     while i >= 0:
         pin_2 = int(input("2.Zahl:"))
         if pin_2 == ergebniss_2:
@@ -59,7 +59,7 @@ def tuer_waerterbuero():
     zahl_3 = int(zellennummern.get("zelle_2"))
     ergebniss_34 = str(zahl_3)[::-1]
 
-    i = 2
+    i = 5
     while i >= 0:
         pin_34 = int(input("Dritte und vierte Ziffer:"))
         if pin_34 == ergebniss_34:
@@ -79,7 +79,30 @@ def waerterbuero():
     "Du gehst zum Terminal und siehst, dass du einen USB-Stick zum Entriegeln brauchst.\n"
     "Du schaust dich um und siehst in dem Raum einen Schrank, einen Schreibtisch und einen Stuhl.")
 
-    kommando = input("Was möchtest du dir als erstes Ansehen? Schrank / Schreibtisch / Stuhl")
+    kommando = input("Was möchtest du dir als erstes Ansehen? Schrank / Schreibtisch / Stuhl").lower()
+    gefunden = False
+    while gefunden == False:
+        if kommando == "stuhl":
+            print("Der Stuhl quietscht als du dich drauf setzt.\n"
+                  "Du merkst, wie dir etwas in den Rücken sticht.\n"
+                  "Du beginnst die Stelle mit einer Schere aufzuschneiden und findest den USB-Stick!")
+            gefunden = True
 
-    if kommando == "Stuhl":
-        print("Der Stuhl quietscht als du dich drauf setzt.\n")
+        if kommando == "schrank":
+            print("Du öffnest die Schranktüren und es fallen dir lauter Ordner entgegen.\n"
+                  "Hier hat wohl seit Jahren keiner mehr aufgeräumt!\n"
+                  "Du durchsuchst die Ordner, aber findest leider keinen USB-Stick!")
+            gefunden = False
+
+        if kommando == "schreibtisch":
+            print("Du gehst zum Schreibtisch und öffnest die Schubladen, leider findest du keinen USB-Stick!")
+            gefunden = False
+
+    if gefunden == True:
+        print("Mit dem USB-Stick kannst du endlich die Kameras deaktivieren.")
+
+    print("Das Display der Kamerasteuerung blinkt rot auf, als du den USB-Stick einstecks!\n"
+          "Die Kameras sind deaktiviert!\n"
+          "Nun kannst du dich endlich um die Tür zum Hof kümmern.\n"
+          "Du verlässt das Büro und gehst zur Hoftür.\n Um diese zu öffnen benötigst du ")
+

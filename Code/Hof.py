@@ -109,7 +109,7 @@ def gefaengnishof_2_wachturm():
             print("Passwort falsch")
             print("Sie haben noch", anzahl_versuche, "versuche")
             if anzahl_versuche == 0:
-                print("Das Nummernfeld geht aus und Sie kommen nicht weiter") # hier wieder nach ganz vorne?!
+                print("Das Nummernfeld geht aus und Sie kommen nicht weiter") # hier wieder nach ganz vorneNEIN?!
 
 #Aufruf der zweiten Funktion
 gefaengnishof_2_wachturm()
