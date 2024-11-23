@@ -1,8 +1,5 @@
 import time
-
-#import Zelle
-#def start_cell():
-    #Zelle.run()
+import Hof
 
 #if übergang == True:#Abfrage ob der Zellenabschnitt abgeschlossen wurde
 zellennummern = {}#Dictionarie für die Zellennummern

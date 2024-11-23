@@ -1,7 +1,8 @@
 #Erster Raum - Gefängniszelle
-def run():
-    import tkinter as tk
+import tkinter as tk
+import Waerterbuero
 
+def run():
     # Hauptfenster erstellen
     cell = tk.Tk()
     cell.title("Zelle")
@@ -10,17 +11,17 @@ def run():
 
     # Funktion zur Überprüfung des Lösungsworts
     def check_password():
-        if user_input == "CODE":
-            output = tk.StringVar(cell,"Glückwunsch! Die Tür öffnet sich.")
+        if eingabe == "code":
+            output = "Glückwunsch! Die Tür öffnet sich."
+            Waerterbuero.run()
         else:
-            output = tk.StringVar(cell,"")
+            output = "Fehler!"
 
         # Ausgabefeld Schloss
         label_output = tk.Label(cell, text=output)
         label_output.pack(pady=10)
 
     # Begrüßungstext
-
     label_text = tk.Label(cell, text="Du erwachst in einer kalten, düsteren Gefängniszelle.\n" 
                                       "Die Luft ist feucht, und nur ein schwacher Lichtstrahl fällt durch ein kleines Fenster hoch oben an der Wand.\n"
                                       "An der Wand erkennst du eine Nachricht, die jemand eingeritzt hat:\n"
@@ -31,7 +32,8 @@ def run():
     # Eingabefeld für das Lösungswort
     user_input = tk.Entry(cell)
     user_input.pack(pady=10)
-    print(user_input)
+    eingabe = user_input.get()
+    print(eingabe)
 
     # Prüfen-Schaltfläche
     button_check = tk.Button(cell, text="Enter", command=check_password)
@@ -39,3 +41,4 @@ def run():
 
     # GUI starten
     cell.mainloop()
+#run()
