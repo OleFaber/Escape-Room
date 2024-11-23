@@ -35,7 +35,7 @@ def tuer_waerterbuero():
             print("Das Zahlenfeld blinkt rot auf! Pass auf du hast noch",i,"Versuche")
             if i == 0:
                 print("Der Wächter hat sie bemerkt und bringt sie zurück in Ihre Zelle!")
-                #start_cell()
+                start_cell()
             i-=1
     #Aufgabe für die zweite Ziffer
     print("Für die zweite Ziffer haben die Wachleute irgendwas von Modulo Zelle 1 durch Zelle 3 gefaselt")
@@ -104,42 +104,5 @@ def waerterbuero():
     print("Das Display der Kamerasteuerung blinkt rot auf, als du den USB-Stick einstecks!\n"
           "Die Kameras sind deaktiviert!\n"
           "Nun kannst du dich endlich um die Tür zum Hof kümmern.\n"
-          "Du verlässt das Büro und gehst zur Hoftür.\n Um diese zu öffnen musst du an dem Terminal Farben eingeben.")
-waerterbuero()
-
-def hoftuer()
-    print("Das Display leuchtet ROT auf!")
-    time.sleep(2)
-    print("Das Display leuchtet GELB auf!")
-    time.sleep(2)
-    farbe_1 = input("Welche Farbe ergibt diese Kombination?").lower()
-    while True:
-        if farbe_1 == "orange":
-            print("Das war richtig!")
-            break
-        else:
-            print("Falsch!")
-    print("Das Display leuchtet BLAU auf!")
-    time.sleep(2)
-    print("Das Display leuchtet GELB auf!")
-    time.sleep(2)
-    farbe_2 = input("Welche Farbe ergibt die Kombination?").lower()
-    while True:
-        if farbe_2 == "grün":
-            print("Das war richtig!")
-            break
-        else:
-            print("Falsch!")
-    print("Das Display leuchtet LILA auf!")
-    time.sleep(2)
-    farbe_3 = input("Welches ist die Komplementärfarbe?").lower()
-    while True:
-        if farbe_3 == "gelb":
-            print("Das war richtig!")
-            break
-        else:
-            print("Falsch!")
-
-
-
+          "Du verlässt das Büro und gehst zur Hoftür.\n Um diese zu öffnen benötigst du ")
 
