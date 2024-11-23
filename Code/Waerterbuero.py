@@ -1,5 +1,5 @@
 import time
-import Hof
+#import Hof
 
 #if übergang == True:#Abfrage ob der Zellenabschnitt abgeschlossen wurde
 zellennummern = {}#Dictionarie für die Zellennummern
@@ -14,6 +14,7 @@ def flur():#Funktion für die Informationen aus dem Flur
     zellennummern ["zelle_1"] = input("Nummer der ersten Zelle:")
     zellennummern ["zelle_2"] = input("Nummer der zweiten Zelle:")
     zellennummern ["zelle_3"] = input("Nummer der dritten Zelle:")
+
 flur()
 
 
@@ -27,7 +28,12 @@ def tuer_waerterbuero():
 
     i=5
     while i>=0:
-        pin_1 = int(input("1.Zahl:"))
+        while True:
+            try:
+                pin_1 = int(input("1.Zahl:"))
+                break
+            except ValueError:
+                print("Bitte gib eine Ganzzahl ein!")
         if pin_1 == 7:
             print(pin_1,"___")
             break
@@ -35,7 +41,7 @@ def tuer_waerterbuero():
             print("Das Zahlenfeld blinkt rot auf! Pass auf du hast noch",i,"Versuche")
             if i == 0:
                 print("Der Wächter hat sie bemerkt und bringt sie zurück in Ihre Zelle!")
-                start_cell()
+                #start_cell()
             i-=1
     #Aufgabe für die zweite Ziffer
     print("Für die zweite Ziffer haben die Wachleute irgendwas von Modulo Zelle 1 durch Zelle 3 gefaselt")
@@ -45,7 +51,12 @@ def tuer_waerterbuero():
 
     i = 5
     while i >= 0:
-        pin_2 = int(input("2.Zahl:"))
+        while True:
+            try:
+                pin_2 = int(input("2.Zahl:"))
+                break
+            except ValueError:
+                print("Bitte gib eine Ganzzahl ein!")
         if pin_2 == ergebniss_2:
             print(pin_1, pin_2,"__")
             break
@@ -53,15 +64,23 @@ def tuer_waerterbuero():
             print("Das Zahlenfeld blinkt rot auf! Pass auf du hast noch", i, "Versuche")
             if i == 0:
                 print("Der Wächter hat sie bemerkt und bringt sie zurück in Ihre Zelle!")
+            i -= 1
                 # Raum1 wieder aufrufen
     #letzten beiden Ziffern eingeben
     print("Die letzen beiden Ziffern der PIN sind die Ziffern der zweiten Zelle umgekehrt!")
     zahl_3 = int(zellennummern.get("zelle_2"))
     ergebniss_34 = str(zahl_3)[::-1]
+    ergebniss_34 = int(ergebniss_34)
+    print(ergebniss_34)
 
     i = 5
     while i >= 0:
-        pin_34 = int(input("Dritte und vierte Ziffer:"))
+        while True:
+            try:
+                pin_34 = int(input("Dritte und vierte Ziffer:"))
+                break
+            except ValueError:
+                print("Bitte gib eine Ganzzahl ein!")
         if pin_34 == ergebniss_34:
             print(pin_1,pin_2,pin_34)
             break
@@ -69,8 +88,10 @@ def tuer_waerterbuero():
             print("Das Zahlenfeld blinkt rot auf! Pass auf du hast noch", i, "Versuche")
             if i == 0:
                 print("Der Wächter hat sie bemerkt und bringt sie zurück in Ihre Zelle!")
-                # Raum1 wieder aufrufen
+            i -= 1
     print("Die Tür zum Wächterbüro öffnet sich und du gehst hinein!")
+    tuer_wb_fertig = True
+#if flur():
 tuer_waerterbuero()
 
 def waerterbuero():
@@ -79,14 +100,15 @@ def waerterbuero():
     "Du gehst zum Terminal und siehst, dass du einen USB-Stick zum Entriegeln brauchst.\n"
     "Du schaust dich um und siehst in dem Raum einen Schrank, einen Schreibtisch und einen Stuhl.")
 
-    kommando = input("Was möchtest du dir als erstes Ansehen? Schrank / Schreibtisch / Stuhl").lower()
     gefunden = False
     while gefunden == False:
+        kommando = input("Was möchtest du dir als erstes Ansehen? Schrank / Schreibtisch / Stuhl").lower()
         if kommando == "stuhl":
             print("Der Stuhl quietscht als du dich drauf setzt.\n"
                   "Du merkst, wie dir etwas in den Rücken sticht.\n"
                   "Du beginnst die Stelle mit einer Schere aufzuschneiden und findest den USB-Stick!")
             gefunden = True
+            break
 
         if kommando == "schrank":
             print("Du öffnest die Schranktüren und es fallen dir lauter Ordner entgegen.\n"
@@ -94,20 +116,26 @@ def waerterbuero():
                   "Du durchsuchst die Ordner, aber findest leider keinen USB-Stick!")
             gefunden = False
 
+
         if kommando == "schreibtisch":
             print("Du gehst zum Schreibtisch und öffnest die Schubladen, leider findest du keinen USB-Stick!")
             gefunden = False
 
+        if kommando != "schrank" and kommando != "schreibtisch" and kommando != "stuhl":
+            print("Bitte wähle einen der angegebenen Orte an!")
+
     if gefunden == True:
         print("Mit dem USB-Stick kannst du endlich die Kameras deaktivieren.")
-
-    print("Das Display der Kamerasteuerung blinkt rot auf, als du den USB-Stick einstecks!\n"
-          "Die Kameras sind deaktiviert!\n"
-          "Nun kannst du dich endlich um die Tür zum Hof kümmern.\n"
-          "Du verlässt das Büro und gehst zur Hoftür.\n Um diese zu öffnen musst du an einem Terminal Farben eingeben.")
+        time.sleep(1)
+        print("Das Display der Kamerasteuerung blinkt rot auf, als du den USB-Stick einsteckst!\n"
+              "Die Kameras sind deaktiviert!\n"
+              "Nun kannst du dich endlich um die Tür zum Hof kümmern.\n"
+              "Du verlässt das Büro und gehst zur Hoftür.\nUm diese zu öffnen musst du an einem Terminal Fragen beantworten.")
+        waerterbuero_fertig = True
+#if tuer_wb_fertig == True:
 waerterbuero()
 
-def hoftuer()
+def hoftuer():
     print("Das Display leuchtet ROT auf!")
     time.sleep(2)
     print("Das Display leuchtet GELB auf!")
@@ -139,4 +167,16 @@ def hoftuer()
             break
         else:
             print("Falsch!")
+    print("Das Display leuchtet MAGENTA auf!")
+    time.sleep(2)
+    antwort = input("Welches Unternehmen verbindest du mit der Farbe?").lower()
+    while True:
+        if antwort == "telekom":
+            print("Das war richtig!")
+            break
+        else:
+            print("Falsch!")
+    print("Das Display leuchtet Grün auf und die Hoftür entriegelt sich!")
 
+#if waerterbuero_fertig == True:
+hoftuer()
