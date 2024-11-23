@@ -120,6 +120,8 @@ def gefaengnishof_2_wachturm():
     time.sleep(2)
     print("Die Truhe ist wieder mit einem Zahlenschloss versperrt")
     seil_gefunden = False
+    code_gefunden = False
+
     kommando = input("Was möchtest du dir als erstes ansehen? Schreibtisch / Truhe / Werkzeugkoffer").lower()
     while seil_gefunden == False:
         if kommando == schreibtisch:
@@ -128,6 +130,8 @@ def gefaengnishof_2_wachturm():
             print("In der Schreibtischschublade ist ein kleines Notizbuch, indem auf der ersten Seite ein weiterer Code notiert ist")
             time.sleep(2)
             print("Der Code ist 1234")
+        elif kommando == werkzeugkoffer:
+            print("Der Werkzeugkoffer ist leer")
 
 
 #Aufruf der zweiten Funktion
