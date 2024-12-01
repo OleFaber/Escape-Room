@@ -87,7 +87,7 @@ def gefaengnishof_1():
             time.sleep(2)
 
 # Aufruf der Funktion um die erste Station
-gefaengnishof_1()
+#gefaengnishof_1()
 
 print("Herzlichen Glueckwunsch, du bist in der naechsten Stufe")
 # Diese Funktion simuliert die zweite Stufe des Spiels, in der der Spieler einen weiteren Code und ein Seil finden muss,
@@ -138,6 +138,7 @@ def gefaengnishof_2_wachturm():
     # Variablen, die den Fortschritt des Spielers speichern
     seil_gefunden = False # Gibt an, ob das Seil bereits gefunden wurde.
     code_gefunden = False # Gibt an, ob der neue Code gefunden wurde.
+    werkzeugkoffer_durchsucht = False
 
     while seil_gefunden == False: # Schleife, die läuft, bis das Seil gefunden wurde.
         kommando = input("Was möchtest du dir ansehen? Schreibtisch / Truhe / Werkzeugkoffer:").lower()
@@ -146,7 +147,8 @@ def gefaengnishof_2_wachturm():
             if code_gefunden == False: # Code wurde noch nicht gefunden.
                 print("Auf dem Schreibtisch liegt nur ein Stift und ein Block")
                 time.sleep(2)
-                print("In der Schreibtischschublade ist ein kleines Notizbuch, indem auf der ersten Seite ein weiterer Code notiert ist")
+                print("In der Schreibtischschublade ist ein kleines Notizbuch, indem auf der ersten Seite ein weiterer Code notiert ist.\n"
+                      "Außerdem liegen ein paar Büroklammern in der Schublade")
                 time.sleep(2)
                 print("Der Code ist 1234")
                 # Spieler muss den Code korrekt eingeben.
@@ -162,10 +164,11 @@ def gefaengnishof_2_wachturm():
             else:
                 print("Der Schreibtisch wurde bereits untersucht")
         elif kommando == "werkzeugkoffer": # Spieler untersucht den Werkzeugkoffer.
-            print("Der Werkzeugkoffer ist leer")
+            print("Im Wekzeugkoffer sind ein paar Maulschlüssel, sowie ein paar kleinere Bügelschellen, ansonsten ist er leer")
+            werkzeugkoffer_durchsucht = True
         elif kommando == "truhe": # Spieler untersucht die Truhe.
             if seil_gefunden == False:
-                if code_gefunden == True: # Überprüft, ob der benötigte Code gefunden wurde.
+                if code_gefunden == True and werkzeugkoffer_durchsucht == True: # Überprüft, ob alle Hinweise gefunden wurden
                     print("Die Truhe ist wie schon erwäht mit einem Zahlenschloss verschlossen")
                     time.sleep(2)
                     print("Villeicht bringt dich der Code, den du gerade notiert hast, weiter", code.get("CODE_Teil3"))
@@ -194,7 +197,43 @@ def gefaengnishof_2_wachturm():
             print("Unbekannter Befehl, probiere Schreibtisch / Truhe / Werkzeugkoffer")
     print("Mit dem Seil könntest du versuchen aus dem Fenster im oberen Stockwerk zu klettern")
     time.sleep(2)
-    print("oben angekommen öffnest du das Fenster, kletterst runter und flüchtest") # Abschluss der Herausforderung und Hinweise zur Flucht
 
+    print("oben angekommen öffnest du das Fenster und siehst dich um wie du das Seil am besten befestigst \n"
+          "Du könntest das Seil an das Geländer knoten, wobei du dir aber nicht sicher mit welchem Knoten das \n"
+          "relativ dicke Seil zuverlässig hält")
+    time.sleep(2)
+    print("Du hast unten in dem Werkzeugkoffer Bügelschellen gesehen, die du für die Seilverbindung ähnlich wie Seilklemmen nutzen könntest")
+    time.sleep(2)
+    print("Mit dem Seil aus dem Fenster zu klettern ist mit einem großen Risiko verbunden\n"
+          "Du könntest auch nach einer Altenative suchen, um nich dein Leben zu riskieren") # Erklärung der weiteren Geschichte
+
+    while True: # Der Spieler trifft eine Entscheidung um aus dem Gefängnis zu fliehen
+        vorgehen = input("Möchtest du die Bügelschellen holen, das Seil anknoten oder dir eine Alternative suchen? Knoten / Schelle / Altenative").lower()
+        if vorgehen == "knoten":
+            print("Du knotest das Seil an kletterst aus dem Fester und während des Abseilens löst sich das Seil vom Geländer und du fällst in die Teife und stirbst")
+            time.sleep(2)
+            print("Der Ausbruch ist fehlgeschlagen") # Verloren
+            break
+        elif vorgehen == "schellen":
+            print("Du gehst hinunter holst die Schellen, sowie den richtigen Schlüssel für diese und befestigst das Seil sicher an dem Geländer")
+            time.sleep(2)
+            print("Du kletterst aus dem Fenster, seilst dich ab und unten angekommen fliehst du in die Freiheit")
+            time.sleep(2)
+            print("Glückwunsch, du bist erfolgreich aus dem Gefängnis ausgebrochen") # Gewonnen
+            break
+        elif vorgehen == "alternative":
+            print("Du schaust dir nochmal alles in dem Wachturm an und überlegst wie du noch entkommen kannst\n"
+                  "Du sitzt verzweifelt längere Zeit im Wachturm und überlegst, ob du doch die Flucht durchs Fenster wagst")
+            time.sleep(2)
+            print("Dir fällt ein, dass in der Schublade Büroklammern liegen")
+            time.sleep(2)
+            print("Du holst die Büroklammern und versuchst mit diesen das Schloss der Tür zu knacken")
+            time.sleep(2)
+            print("nach langem Probieren geligt es dir und du entkommst")
+            print("Glückwunsch, du bist erfolgreich aus dem Gefängnis ausgebrochen") # Gewonnen
+            break
+        else: # Fehlermeldung bei falscher Eingabe
+            print("Unbekannter Befehl, probiere Knoten / Schelle / Altenative")
 #Aufruf der zweiten Funktion
 gefaengnishof_2_wachturm()
+
