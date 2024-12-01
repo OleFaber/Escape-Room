@@ -1,9 +1,8 @@
 import time
 #import Hof
-
 #if übergang == True:#Abfrage ob der Zellenabschnitt abgeschlossen wurde
 zellennummern = {}#Dictionarie für die Zellennummern
-def flur():#Funktion für die Informationen aus dem Flur
+def flur(): #Funktion für die Informationen aus dem Flur
     print("Du schleichst den Flur in Richtung Wärterbüro entlang und kommst dabei an drei Zellen vorbei!")
     print("Zelle 151")
     time.sleep(7)
@@ -11,13 +10,10 @@ def flur():#Funktion für die Informationen aus dem Flur
     time.sleep(4)
     print("Zelle 2")
     print("Um dir die Nummern zu merken, schreibst du sie dir auf den Arm!")
-    zellennummern ["zelle_1"] = input("Nummer der ersten Zelle:")
-    zellennummern ["zelle_2"] = input("Nummer der zweiten Zelle:")
-    zellennummern ["zelle_3"] = input("Nummer der dritten Zelle:")
-
+    zellennummern ["zelle_1"] = input("Nummer der ersten Zelle:")   #Eingabe wird im Dictionarie gespeichert
+    zellennummern ["zelle_2"] = input("Nummer der zweiten Zelle:")  #Eingabe wird im Dictionarie gespeichert
+    zellennummern ["zelle_3"] = input("Nummer der dritten Zelle:")  #Eingabe wird im Dictionarie gespeichert
 flur()
-
-
 def tuer_waerterbuero():
     #Aufgabe für die erste Ziffer
     print("An der Tür ist ein PIN-Pad angebracht. Es wird eine vierstellige PIN benötigt")
@@ -25,7 +21,6 @@ def tuer_waerterbuero():
     print("Vor ein paar Tagen konntest du die Wärter über eine Änderung des Codes belauschen.\n"
           "Du kannst dich leider nur noch an wenig erinnern.\n"
           "Die erste Stelle des Codes war die Quersumme der ersten Zellennummer.")
-
     i=5
     while i>=0:
         while True:
@@ -43,14 +38,13 @@ def tuer_waerterbuero():
                 print("Der Wächter hat sie bemerkt und bringt sie zurück in Ihre Zelle!")
                 #start_cell()
             i-=1
-    #Aufgabe für die zweite Ziffer
-    print("Für die zweite Ziffer haben die Wachleute irgendwas von Modulo Zelle 1 durch Zelle 3 gefaselt")
+    print("Für die zweite Ziffer haben die Wachleute irgendwas von Modulo Zelle 1 durch Zelle 3 gefaselt")#Aufgabe für die zweite Ziffer
     zahl_1 = int(zellennummern.get("zelle_1"))
     zahl_2 = int(zellennummern.get("zelle_3"))
     ergebniss_2 = zahl_1 % zahl_2
 
-    i = 5
-    while i >= 0:
+    j = 5
+    while j >= 0:
         while True:
             try:
                 pin_2 = int(input("2.Zahl:"))
@@ -62,9 +56,9 @@ def tuer_waerterbuero():
             break
         else:
             print("Das Zahlenfeld blinkt rot auf! Pass auf du hast noch", i, "Versuche")
-            if i == 0:
+            if j == 0:
                 print("Der Wächter hat sie bemerkt und bringt sie zurück in Ihre Zelle!")
-            i -= 1
+            j -= 1
                 # Raum1 wieder aufrufen
     #letzten beiden Ziffern eingeben
     print("Die letzen beiden Ziffern der PIN sind die Ziffern der zweiten Zelle umgekehrt!")
@@ -73,8 +67,8 @@ def tuer_waerterbuero():
     ergebniss_34 = int(ergebniss_34)
     print(ergebniss_34)
 
-    i = 5
-    while i >= 0:
+    k = 5
+    while k >= 0:
         while True:
             try:
                 pin_34 = int(input("Dritte und vierte Ziffer:"))
@@ -86,9 +80,9 @@ def tuer_waerterbuero():
             break
         else:
             print("Das Zahlenfeld blinkt rot auf! Pass auf du hast noch", i, "Versuche")
-            if i == 0:
+            if k == 0:
                 print("Der Wächter hat sie bemerkt und bringt sie zurück in Ihre Zelle!")
-            i -= 1
+            k -= 1
     print("Die Tür zum Wächterbüro öffnet sich und du gehst hinein!")
     tuer_wb_fertig = True
 #if flur():
