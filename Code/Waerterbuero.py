@@ -10,9 +10,9 @@ def flur(): #Funktion für die Informationen aus dem Flur
     time.sleep(4)
     print("Zelle 2")
     print("Um dir die Nummern zu merken, schreibst du sie dir auf den Arm!")
-    zellennummern ["zelle_1"] = input("Nummer der ersten Zelle:")   #Eingabe wird im Dictionarie gespeichert
-    zellennummern ["zelle_2"] = input("Nummer der zweiten Zelle:")  #Eingabe wird im Dictionarie gespeichert
-    zellennummern ["zelle_3"] = input("Nummer der dritten Zelle:")  #Eingabe wird im Dictionarie gespeichert
+    zellennummern ["zelle_1"] = input("Nummer der ersten Zelle:")   #Eingabe wird im Dictionary gespeichert
+    zellennummern ["zelle_2"] = input("Nummer der zweiten Zelle:")  #Eingabe wird im Dictionary gespeichert
+    zellennummern ["zelle_3"] = input("Nummer der dritten Zelle:")  #Eingabe wird im Dictionary gespeichert
 flur()
 def tuer_waerterbuero():
     #Aufgabe für die erste Ziffer
@@ -22,17 +22,17 @@ def tuer_waerterbuero():
           "Du kannst dich leider nur noch an wenig erinnern.\n"
           "Die erste Stelle des Codes war die Quersumme der ersten Zellennummer.")
     i=5
-    while i>=0:
-        while True:
+    while i>=0: #While-SChleife für die Eingabe einer Lösung zum Rätsel
+        while True: #Ausnahmebehandlung für den Value Error
             try:
-                pin_1 = int(input("1.Zahl:"))
+                pin_1 = int(input("1.Zahl:"))   # Eingabe der ersten Zahl des Pin-Codes
                 break
             except ValueError:
                 print("Bitte gib eine Ganzzahl ein!")
-        if pin_1 == 7:
-            print(pin_1,"___")
+        if pin_1 == 7:  #Vergleich der eingegebenen Zahl und der Lösung
+            print(pin_1,"___")  #Ausgabe des Zahlenfeldes
             break
-        else:
+        else:   #Wenn die Zahl falsch ist wird der folgende Codeblock abgearbeitet
             print("Das Zahlenfeld blinkt rot auf! Pass auf du hast noch",i,"Versuche")
             if i == 0:
                 print("Der Wächter hat sie bemerkt und bringt sie zurück in Ihre Zelle!")
