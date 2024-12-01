@@ -81,7 +81,7 @@ def gefaengnishof_1():
             print("Unbekannter Befehl. Versuche eines der vier Befehle: Treppe, Kiste, Bank, Wachturm.")
             time.sleep(2)
 #Aufruf der Funktion
-#gefaengnishof_1()
+gefaengnishof_1()
 
 print("Herzlichen Glueckwunsch, du bist in der naechsten Stufe")
 
@@ -89,12 +89,15 @@ def gefaengnishof_2_wachturm():
     print("Du hast nun den Wachturm erreicht und bist nun vor der letzten Stufe unseres Spiels")
     time.sleep(2)
     print("Du gehst den Wachturm hinauf und ueberpruefst, ob irgendeine Tuer im Treppenhaus  offen ist.\n"
-          "Es sind bis oben aber alle Tueren verschlossen und dir ist nur eine Abstellkammer des Hausmeisters in der dritten Etage aufgefallen, welcher mit einem digitalen Zahlenschloss versperrt ist.\n"
+          "Es sind bis oben aber alle Tueren verschlossen und dir ist nur eine Abstellkammer des Hausmeisters in der dritten Etage aufgefallen, \n"
+          "welcher mit einem digitalen Zahlenschloss versperrt ist.\n"
           "Ganz oben im Wachturm ist dir noch ein Fenster aufgefallen, welches nicht versperrt ist und aus dem Gefaengnis fuehrt")
     time.sleep(2)
-    print("Du hast ohne Erfolg alle versperrten Tueren versucht mit dem gefundenen Schluessel aufzuschließen, also ist deine letzte Hoffnung die Abstellkammper ")
+    print("Du hast ohne Erfolg alle versperrten Tueren versucht mit dem gefundenen Schluessel aufzuschließen, \n"
+          "also ist deine letzte Hoffnung die Abstellkammper ")
     time.sleep(2)
-    print("Dein Informant, der die Hinweise sorgfaeltig versteckt hat, erklaerte, dass sich das Passwort aus dem einen Hinweis minus dem anderen Hinweis zusammensetzt. Er war sich aber unsicher wie herum")
+    print("Dein Informant, der die Hinweise sorgfaeltig versteckt hat, erklaerte, \n"
+          "dass sich das Passwort aus dem einen Hinweis minus dem anderen Hinweis zusammensetzt. Er war sich aber unsicher wie herum")
     print("Hinweis aus der ersten Stufe", code.get("CODE_Teil1"),",", code.get("CODE_Teil2"))
 
     anzahl_versuche = 3
@@ -109,7 +112,76 @@ def gefaengnishof_2_wachturm():
             print("Passwort falsch")
             print("Sie haben noch", anzahl_versuche, "versuche")
             if anzahl_versuche == 0:
-                print("Das Nummernfeld geht aus und Sie kommen nicht weiter") # hier wieder nach ganz vorneNEIN?!
+                print("Das Nummernfeld geht aus und Sie kommen nicht weiter") # hier wieder nach ganz vorne?!
+                # oder hier wieder an den anfang dieser Funktion
+    #neue etappe im Code
+    print("In der Abstellkammer findest du einen weiteren Schlüssel")
+    time.sleep(2)
+    print("Du testet ein weiteres mal mit diesem Schlüssel die Türen und es lässt sich eine Tür öffnen!")
+    time.sleep(2)
+    print("Der Raum ist dunkel und du siehst hinten in der Ecke nur einen Umriss von einem Schreibtisch. \n"
+          "In der andern Ecke steht eine Truhe und rechts von dir steht eine kleiner Werkzeugkoffer")
+    time.sleep(2)
+    print("Die Truhe ist wieder mit einem Zahlenschloss versperrt")
+
+    seil_gefunden = False
+    code_gefunden = False
+
+    while seil_gefunden == False:
+        kommando = input("Was möchtest du dir ansehen? Schreibtisch / Truhe / Werkzeugkoffer:").lower()
+
+        if kommando == "schreibtisch":
+            if code_gefunden == False:
+                print("Auf dem Schreibtisch liegt nur ein Stift und ein Block")
+                time.sleep(2)
+                print("In der Schreibtischschublade ist ein kleines Notizbuch, indem auf der ersten Seite ein weiterer Code notiert ist")
+                time.sleep(2)
+                print("Der Code ist 1234")
+
+                benutzer_code = input("Bitte notiere den Code damit du ihn nicht vergisst:")
+                if benutzer_code == "1234":
+                    code_gefunden = True
+                    code["CODE_Teil3"] = benutzer_code
+                    print("richtiger Code!")
+                    time.sleep(2)
+
+                else:
+                    print("Falscher Code!")
+            else:
+                print("Der Schreibtisch wurde bereits untersucht")
+        elif kommando == "werkzeugkoffer":
+            print("Der Werkzeugkoffer ist leer")
+        elif kommando == "truhe":
+            if seil_gefunden == False:
+                if code_gefunden == True:
+                    print("Die Truhe ist wie schon erwäht mit einem Zahlenschloss verschlossen")
+                    time.sleep(2)
+                    print("Villeicht bringt dich der Code, den du gerade notiert hast, weiter", code.get("CODE_Teil3"))
+                    while True:
+                        try:
+                            zahlencode_truhe = int(input("Bitte gib den Code ein"))
+                            if zahlencode_truhe == 1234:
+                                print("richtiger Code!")
+                                time.sleep(2)
+                                break
+                            else:
+                                print("Falscher Code!")
+
+                        except ValueError as e:
+                            print("Sie dürfen keinen String eingeben", e)
+                    print("In der Truhe liegt ein Seil")
+                    seil_gefunden = True
+
+                else:
+                    print("Du musst erst einen anderen Hinweis finden")
+            else:
+                print("Die Truhe wurde bereits geöffnet")
+                time.sleep(2)
+        else:
+            print("Unbekannter Befehl, probiere Schreibtisch / Truhe / Werkzeugkoffer")
+    print("Mit dem Seil könntest du versuchen aus dem Fenster im oberen Stockwerk zu klettern")
+    time.sleep(2)
+    print("oben angekommen öffnest du das Fenster, kletterst runter und flüchtest")
 
 #Aufruf der zweiten Funktion
 gefaengnishof_2_wachturm()
