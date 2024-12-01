@@ -85,9 +85,9 @@ def waerterbuero(): #Erstellen des nächsten Raumes über eine Funktion
     "Du gehst zum Terminal und siehst, dass du einen USB-Stick zum Entriegeln brauchst.\n"
     "Du schaust dich um und siehst in dem Raum einen Schrank, einen Schreibtisch, eine kleine Schachtel und einen Stuhl.")
     found = False
+    schere = False  # Variable auf False gesetzt, Schere noch nicht gefunden
     while found == False:    #While-Schleife für die Auswahl von Orten zum suchen
         kommando = input("Was möchtest du dir als erstes Ansehen? Schrank / Schreibtisch / Stuhl / Schachtel").lower()  #Variable in denen die Auswahl gespeicchert wird
-        schere = False #Variable auf False gesetzt, Schere noch nicht gefunden
         if kommando == "stuhl" and schere == True: #Stuhl ausgewählt
             print("Der Stuhl quietscht als du dich drauf setzt.\n"
                   "Du merkst, wie dir etwas in den Rücken sticht.\n"
@@ -109,7 +109,7 @@ def waerterbuero(): #Erstellen des nächsten Raumes über eine Funktion
             print("Du hebst die Schachtel auf und versuchst sie zu öffnen. Der Verschluss klemmt. \n"
                   "Mit ein bisschen Kraft lässt sich die Schachtel dennoch öffnen und du findest eine Schere!")
             schere = True #Variable Schere wird auf True gesetzt
-        if kommando != "schrank" and kommando != "schreibtisch" and kommando != "stuhl":    #Ausnahmebehandlung von falscher Eingabe
+        if kommando != "schrank" and kommando != "schreibtisch" and kommando != "stuhl" and kommando != "schachtel":    #Ausnahmebehandlung von falscher Eingabe
             print("Bitte gib einen der angegebenen Gegenstände ein!")
     if found == True:    #USB-Stick wurde gefunden und das Programm läuft weiter
         print("Mit dem USB-Stick kannst du endlich die Kameras deaktivieren.")
@@ -171,13 +171,13 @@ def hoftuer():
             print("Falsch! Bitte probier es erneut! Achte auch auf die Rechtschreibung!")
     print("Das Display leuchtet LILA auf!")
     time.sleep(2)
-    farbe_3 = input("Welches ist die Komplementärfarbe?").lower()   #Eingabe der Lösung des Spielers
+    farbe_3 = input("Was ist die Komplementärfarbe von Lila?").lower()   #Eingabe der Lösung des Spielers
     while True: #While Schleife zum Auswerten der Eingabe des Spielers
         if farbe_3 == "gelb":
             print("Das war richtig!")
             break
         else:
-            print("Falsch! Bitte probier es erneut! Achte auch auf die Rechtschreibung!")
+            print("Falsch! Bitte probier es erneut! Kleiner Tipp: Die Farbe der Sonnenblume!")
     print("Das Display leuchtet MAGENTA auf!")
     time.sleep(2)
     while True: #While Schleife zum Auswerten der Eingabe des Spielers
