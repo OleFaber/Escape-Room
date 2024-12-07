@@ -87,6 +87,7 @@ def tuer_waerterbuero():
 tuer_waerterbuero() #Starten der Wärterbürotür-Funktion
 
 def waerterbuero(): #Erstellen des nächsten Raumes über eine Funktion
+    time.sleep(2)
     print("Im Wärterbüro angekommen, schaust du dich um und entdeckst die Steuerung der\n"
     "Überwachungskameras. Diese musst du für deine Flucht unbedingt deaktivieren!\n"
     "Du gehst zum Terminal und siehst, dass du einen USB-Stick zum Entriegeln brauchst.\n"
@@ -125,6 +126,7 @@ def waerterbuero(): #Erstellen des nächsten Raumes über eine Funktion
               "Die Kameras sind deaktiviert!\n"
               "Nun kannst du dich endlich um die Tür zum Hof kümmern.\n"
               "Du verlässt das Büro und gehst Richtung Hoftür.")
+    time.sleep(1)
 waerterbuero()  #Starten der Wärterbüro-Funktion
 
 def flur_2():   #Erstellen der Funktion flur_2
@@ -140,7 +142,7 @@ def flur_2():   #Erstellen der Funktion flur_2
             print("Du öffnest den Schrank 2 und findest Geschirr für die Kantine")
         if wahl == "3": #Anwahl 3 wird verarbeitet
             print("Du öffnest den Schrank 3 und findest drei Werkzeuge!\n"
-                  "einen Maulschlüssel, einen Hakenschlüssel und einen Schraubendreher!")
+                  "Einen Maulschlüssel, einen Hakenschlüssel und einen Schraubendreher!")
             break #Schleife wird abgebrochen
         if wahl != "1" and wahl != "2" and wahl != "3":
             print("Bitte wähle einen der drei Schränke!")
@@ -148,20 +150,22 @@ def flur_2():   #Erstellen der Funktion flur_2
     while True:
         auswahl = input("Welches Werkzeug möchtest du ausprobieren? Maulschlüssel / Hakenschlüssel / Schraubendreher").lower()
         if auswahl == "maulschlüssel":
-            print("Der Maulschlüssel rutscht über die Nutmutter und löst diese nicht!")
+            print("Der Maulschlüssel lässt sich nicht auf die Nutmutter setzten!")
         if auswahl == "hakenschlüssel":
             print("Der Hakenschlüssel passt einwandfrei! Die Nutmutter löst sich und die Tür lässt sich öffnen!")
             break
         if auswahl == "schraubendreher":
             print("Du setzt den Schraubendreher an und rutscht ab! Die Nutmutter lässt sich nicht lösen!")
+        if auswahl != "schraubendreher" and auswahl != "maulschlüssel" and auswahl != "hakenschlüssel":
+            print("Bitte wähle einen der Gegenstände aus!")
     print("Die Tür hat sich geöffnet und du kannst weiter in Richtung Hoftür gehen!")
 flur_2()
 
 def hoftuer():
     print("Das Display leuchtet ROT auf!")
-    time.sleep(2)
+    time.sleep(1)
     print("Das Display leuchtet GELB auf!")
-    time.sleep(2)
+    time.sleep(1)
     while True: #While Schleife zum Auswerten der Eingabe des Spielers
         farbe_1 = input("Welche Farbe ergibt diese Kombination?").lower()  #Eingabe der Lösung des Spielers
         if farbe_1 == "orange":
@@ -170,9 +174,9 @@ def hoftuer():
         else:
             print("Falsch! Bitte probier es erneut! Achte auch auf die Rechtschreibung!")
     print("Das Display leuchtet BLAU auf!")
-    time.sleep(2)
+    time.sleep(1)
     print("Das Display leuchtet GELB auf!")
-    time.sleep(2)
+    time.sleep(1)
     while True: #While Schleife zum Auswerten der Eingabe des Spielers
         farbe_2 = input("Welche Farbe ergibt die Kombination?").lower() #Eingabe der Lösung des Spielers
         if farbe_2 == "grün":
@@ -181,16 +185,16 @@ def hoftuer():
         else:
             print("Falsch! Bitte probier es erneut! Achte auch auf die Rechtschreibung!")
     print("Das Display leuchtet LILA auf!")
-    time.sleep(2)
-    farbe_3 = input("Was ist die Komplementärfarbe von Lila?").lower()   #Eingabe der Lösung des Spielers
+    time.sleep(1)
     while True: #While Schleife zum Auswerten der Eingabe des Spielers
+        farbe_3 = input("Was ist die Komplementärfarbe von Lila?").lower()  # Eingabe der Lösung des Spielers
         if farbe_3 == "gelb":
             print("Das war richtig!")
             break
         else:
             print("Falsch! Bitte probier es erneut! Kleiner Tipp: Die Farbe der Sonnenblume!")
     print("Das Display leuchtet MAGENTA auf!")
-    time.sleep(2)
+    time.sleep(1)
     while True: #While Schleife zum Auswerten der Eingabe des Spielers
         antwort = input("Welches Unternehmen verbindest du mit der Farbe?").lower() #Eingabe der Lösung des Spielers
         if antwort == "telekom":    #Vergleich von Antwort mit Lösung
@@ -208,4 +212,5 @@ def hoftuer():
             print("Falsch! Bitte probier es erneut! Kleiner Tipp: Dort leben Pinguine!")
     print("Das Display leuchtet GRÜN auf und die Hoftür entriegelt sich!")
 hoftuer()   #Starten der Hoftür-Funktion
+
 
