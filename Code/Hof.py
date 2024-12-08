@@ -44,6 +44,7 @@ def gefaengnishof_1():
                 benutzer_code = input("Bitte notiere den Code, damit du ihn nicht vergisst: ") # Aufforderung den Code zu notieren, für spätere Spielschritte
                 if benutzer_code == "2357":  # Überpruefen, ob der eingegebene Code richtig ist
                     code["CODE_Teil1"] = benutzer_code
+                    print("Richtiger Code!")
                     teilcode_gefunden = True # Variable wird auf True gesetzt, wenn Teilcode "Kiste" gefunden
                     time.sleep(2)
                 else:
@@ -59,6 +60,7 @@ def gefaengnishof_1():
                 benutzer_code = input("Bitte notiere den Code,damit du ihn nicht vergisst: ") # Aufforderung den Code zu notieren, für spätere Spielschritte
                 if benutzer_code == "7685":  # Überpruefen, ob der eingegebene Code richtig ist
                     code["CODE_Teil2"] = benutzer_code
+                    print("Richtiger Code!")
                     teilcode2_gefunden = True # Variable wird auf True gesetzt, wenn Teilcode "Tisch" gefunden
                     time.sleep(2)
                 else:
@@ -87,7 +89,7 @@ def gefaengnishof_1():
             time.sleep(2)
 
 # Aufruf der Funktion um die erste Station
-#gefaengnishof_1()
+gefaengnishof_1()
 
 print("Herzlichen Glueckwunsch, du bist in der naechsten Stufe")
 # Diese Funktion simuliert die zweite Stufe des Spiels, in der der Spieler einen weiteren Code und ein Seil finden muss,
@@ -164,8 +166,11 @@ def gefaengnishof_2_wachturm():
             else:
                 print("Der Schreibtisch wurde bereits untersucht")
         elif kommando == "werkzeugkoffer": # Spieler untersucht den Werkzeugkoffer.
-            print("Im Wekzeugkoffer sind ein paar Maulschlüssel, sowie ein paar kleinere Bügelschellen, ansonsten ist er leer")
-            werkzeugkoffer_durchsucht = True
+            if werkzeugkoffer_durchsucht == False: # Werkzeugkoffer wurde noch nicht durchsucht
+                print("Im Wekzeugkoffer sind ein paar Maulschlüssel, sowie ein paar kleinere Bügelschellen, ansonsten ist er leer")
+                werkzeugkoffer_durchsucht = True # speichert das Werzeugkoffer durchsucht
+            else:
+                print("Der Werkzeugkoffer wurde bereits untersucht!")
         elif kommando == "truhe": # Spieler untersucht die Truhe.
             if seil_gefunden == False:
                 if code_gefunden == True and werkzeugkoffer_durchsucht == True: # Überprüft, ob alle Hinweise gefunden wurden
@@ -214,7 +219,7 @@ def gefaengnishof_2_wachturm():
             time.sleep(2)
             print("Der Ausbruch ist fehlgeschlagen") # Verloren
             break
-        elif vorgehen == "schellen":
+        elif vorgehen == "schelle":
             print("Du gehst hinunter holst die Schellen, sowie den richtigen Schlüssel für diese und befestigst das Seil sicher an dem Geländer")
             time.sleep(2)
             print("Du kletterst aus dem Fenster, seilst dich ab und unten angekommen fliehst du in die Freiheit")
