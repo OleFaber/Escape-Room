@@ -4,9 +4,12 @@ zellennummern = {}  #Dictionary für die Zellennummern erstellt
 
 def flur(): #Funktion für die Informationen aus dem Flur
     print("Du schleichst den Flur in Richtung Wärterbüro entlang und kommst dabei an drei Zellen vorbei!")
-    print("Zelle 151")
+    print("Zelle 151\n"
+          "Du schleichst langsam weiter!")
     time.sleep(7)
-    print("Zelle 24")
+    print("Zelle 24\n"
+          "Pass auf, fast hätte dich der Wachmann gesehen!\n"
+          "Jetzt aber schnell weiter!")
     time.sleep(4)
     print("Zelle 2")
     print("Um dir die Nummern zu merken, schreibst du sie dir auf den Arm!")

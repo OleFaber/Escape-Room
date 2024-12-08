@@ -291,9 +291,12 @@ def run_buero():
 
     def flur():  # Funktion für die Informationen aus dem Flur
         print("Du schleichst den Flur in Richtung Wärterbüro entlang und kommst dabei an drei Zellen vorbei!")
-        print("Zelle 151")
+        print("Zelle 151\n"
+              "Du schleichst langsam weiter!")
         time.sleep(7)
-        print("Zelle 24")
+        print("Zelle 24\n"
+              "Pass auf, fast hätte dich der Wachmann gesehen!\n"
+              "Jetzt aber schnell weiter!")
         time.sleep(4)
         print("Zelle 2")
         print("Um dir die Nummern zu merken, schreibst du sie dir auf den Arm!")
@@ -313,7 +316,7 @@ def run_buero():
         while i >= 0:  # While-Schleife für die Eingabe und Verarbeitung der ersten Ziffer des Pin-Codes
             while True:  # Ausnahmebehandlung für den Value Error
                 try:
-                    pin_1 = int(input("1.Zahl:"))  # Eingabe der ersten Zahl des Pin-Codes
+                    pin_1 = int(input("1.Zahl: "))  # Eingabe der ersten Zahl des Pin-Codes
                     break
                 except ValueError:
                     print("Bitte gib eine Ganzzahl ein!")
@@ -335,7 +338,7 @@ def run_buero():
         while j >= 0:  # Schleife zur Eingabe und Verarbeitung der zweiten Ziffer des Pin-Codes
             while True:  # Ausnahmebehandlung für den Value Error
                 try:
-                    pin_2 = int(input("2.Zahl:"))  # Eingabe der zweiten Ziffer des Pin-Codes
+                    pin_2 = int(input("2.Zahl: "))  # Eingabe der zweiten Ziffer des Pin-Codes
                     break
                 except ValueError:
                     print("Bitte gib eine Ganzzahl ein!")
@@ -356,7 +359,7 @@ def run_buero():
         while k >= 0:  # Schleife zur Eingabe und Verarbeitung der dritten und vierten Ziffer des Pin-Codes
             while True:  # Ausnahmebehandlung für den Value Error
                 try:
-                    pin_34 = int(input("Dritte und vierte Ziffer:"))  # Eingabe der letzen beiden Ziffern des Pin-Codes
+                    pin_34 = int(input("Dritte und vierte Ziffer: "))  # Eingabe der letzen beiden Ziffern des Pin-Codes
                     break
                 except ValueError:
                     print("Bitte gib eine Ganzzahl ein!")
@@ -382,7 +385,7 @@ def run_buero():
         schere = False  # Variable auf False gesetzt, Schere noch nicht gefunden
         while found == False:  # While-Schleife für die Auswahl von Orten zum suchen
             kommando = input(
-                "Was möchtest du dir als erstes Ansehen? Schrank / Schreibtisch / Stuhl / Schachtel").lower()  # Variable in denen die Auswahl gespeicchert wird
+                "Was möchtest du dir als erstes Ansehen? Schrank / Schreibtisch / Stuhl / Schachtel: ").lower()  # Variable in denen die Auswahl gespeicchert wird
             if kommando == "stuhl" and schere == True:  # Stuhl ausgewählt
                 print("Der Stuhl quietscht als du dich drauf setzt.\n"
                       "Du merkst, wie dir etwas in den Rücken sticht.\n"
@@ -424,7 +427,7 @@ def run_buero():
               "Um diese zu lösen benötigst du ein passendes Werkzeug!")
         while True:  # While-Schleife für die Auswahlmöglichkeiten der Schränke
             wahl = input(
-                "Welchen Schrank möchtest du durchsuchen? 1, 2 oder 3?")  # Erstellen der Variable für die Auswahl
+                "Welchen Schrank möchtest du durchsuchen? 1, 2 oder 3? ")  # Erstellen der Variable für die Auswahl
             if wahl == "1":  # Anwahl 1 wird verarbeitet
                 print("Du öffnest den Schrank 1 und findest die Gefängniskleidung!")
             if wahl == "2":  # Anwahl 2 wird verarbeitet
@@ -436,7 +439,7 @@ def run_buero():
         print("Wieder an der Tür angekommen, musst du dich entscheiden welches Werkzeug du verwenden möchtest!")
         while True:
             auswahl = input(
-                "Welches Werkzeug möchtest du ausprobieren? Maulschlüssel / Hakenschlüssel / Schraubendreher").lower()
+                "Welches Werkzeug möchtest du ausprobieren? Maulschlüssel / Hakenschlüssel / Schraubendreher: ").lower()
             if auswahl == "maulschlüssel":
                 print("Der Maulschlüssel rutscht über die Nutmutter und löst diese nicht!")
             if auswahl == "hakenschlüssel":
@@ -454,7 +457,7 @@ def run_buero():
         print("Das Display leuchtet GELB auf!")
         time.sleep(2)
         while True:  # While Schleife zum Auswerten der Eingabe des Spielers
-            farbe_1 = input("Welche Farbe ergibt diese Kombination?").lower()  # Eingabe der Lösung des Spielers
+            farbe_1 = input("Welche Farbe ergibt diese Kombination? ").lower()  # Eingabe der Lösung des Spielers
             if farbe_1 == "orange":
                 print("Das war richtig!")
                 break
@@ -465,7 +468,7 @@ def run_buero():
         print("Das Display leuchtet GELB auf!")
         time.sleep(2)
         while True:  # While Schleife zum Auswerten der Eingabe des Spielers
-            farbe_2 = input("Welche Farbe ergibt die Kombination?").lower()  # Eingabe der Lösung des Spielers
+            farbe_2 = input("Welche Farbe ergibt die Kombination? ").lower()  # Eingabe der Lösung des Spielers
             if farbe_2 == "grün":
                 print("Das war richtig!")
                 break
@@ -473,7 +476,7 @@ def run_buero():
                 print("Falsch! Bitte probier es erneut! Achte auch auf die Rechtschreibung!")
         print("Das Display leuchtet LILA auf!")
         time.sleep(2)
-        farbe_3 = input("Was ist die Komplementärfarbe von Lila?").lower()  # Eingabe der Lösung des Spielers
+        farbe_3 = input("Was ist die Komplementärfarbe von Lila? ").lower()  # Eingabe der Lösung des Spielers
         while True:  # While Schleife zum Auswerten der Eingabe des Spielers
             if farbe_3 == "gelb":
                 print("Das war richtig!")
@@ -484,7 +487,7 @@ def run_buero():
         time.sleep(2)
         while True:  # While Schleife zum Auswerten der Eingabe des Spielers
             antwort = input(
-                "Welches Unternehmen verbindest du mit der Farbe?").lower()  # Eingabe der Lösung des Spielers
+                "Welches Unternehmen verbindest du mit der Farbe? ").lower()  # Eingabe der Lösung des Spielers
             if antwort == "telekom":  # Vergleich von Antwort mit Lösung
                 print("Das war richtig!")
                 break
@@ -492,7 +495,7 @@ def run_buero():
                 print("Falsch! Bitte probier es erneut! Kleiner Tipp: Sie kümmern sich um Internet!")
         print("Das Display leuchtet WEIß auf!")
         while True:  # While Schleife zum Auswerten der Eingabe des Spielers
-            antwort = input("Welchen Kontinent verbindest du mit der Farbe?").lower()  # Eingabe der Lösung des Spielers
+            antwort = input("Welchen Kontinent verbindest du mit der Farbe? ").lower()  # Eingabe der Lösung des Spielers
             if antwort == "antarktis":  # Vergleich von Antwort mit Lösung
                 print("Das war richtig!")
                 break
