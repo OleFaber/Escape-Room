@@ -1,4 +1,3 @@
-#Erster Raum - Gefängniszelle
 import tkinter as tk  #Für GUI
 
 def run_zelle():

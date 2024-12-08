@@ -1,4 +1,4 @@
-import tkinter as tk  #Für GUI
+import tkinter as tk  #Importieren des tkinter Moduls, für die grafische Benutzeroberfläche
 import time # Importieren des Zeit Moduls, um Pausen zwischen den print-Befehlen zu erzeugen
 
 # Startfenster erstellen
