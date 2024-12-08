@@ -13,7 +13,7 @@ canvas = tk.Canvas(root, width=800, height=800, bg="black")
 canvas.pack()
 
 #Foto in Canvas packen
-image_prison = tk.PhotoImage(file="../images/prison.png")
+image_prison = tk.PhotoImage(file="images/prison.png")
 prisonBg = canvas.create_image(0,0,image=image_prison, anchor='nw')
 
 #Titeltext erstellen
@@ -532,7 +532,7 @@ def run_zelle():
     canvas.pack()
 
     # Bild laden und auf das Canvas zeichnen
-    image_cell = tk.PhotoImage(file="../images/cell.png")
+    image_cell = tk.PhotoImage(file="images/cell.png")
     canvas.create_image(0, 0, anchor="nw", image=image_cell)
 
     # Ausgabefeld - Text Widget erstellen
