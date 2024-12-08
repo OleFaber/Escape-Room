@@ -13,8 +13,8 @@ canvas = tk.Canvas(root, width=800, height=800, bg="black")
 canvas.pack()
 
 #Foto in Canvas packen
-Img = tk.PhotoImage(file="../images/prison.png")
-prisonBg = canvas.create_image(0,0,image=Img, anchor='nw')
+image_prison = tk.PhotoImage(file="../images/prison.png")
+prisonBg = canvas.create_image(0,0,image=image_prison, anchor='nw')
 
 #Titeltext erstellen
 label = tk.Label(root, text="Prison-Escape", bg="black", fg="white", font=("Helvetica", 30, "bold"))
